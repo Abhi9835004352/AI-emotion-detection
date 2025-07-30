@@ -1,0 +1,272 @@
+# ============================================
+# NODE.JS - UI & BACKEND FOLDERS
+# ============================================
+# Node modules (BIGGEST SPACE SAVER)
+ui/node_modules/
+backend/node_modules/
+**/node_modules/
+
+# Package manager lock files (optional to exclude)
+ui/package-lock.json
+backend/package-lock.json
+ui/yarn.lock
+backend/yarn.lock
+
+# Build outputs
+ui/build/
+ui/dist/
+ui/.next/
+backend/build/
+backend/dist/
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Logs
+ui/npm-debug.log*
+ui/yarn-debug.log*
+ui/yarn-error.log*
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+*.log
+
+# Coverage directory used by tools like istanbul
+ui/coverage/
+backend/coverage/
+
+# Cache directories
+ui/.cache/
+ui/.parcel-cache/
+backend/.cache/
+.npm
+.eslintcache
+
+# ============================================
+# PYTHON / ML SPECIFIC
+# ============================================
+# Python cache
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+ml/ml/
+**/venv/
+**/env/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.npm
+.yarn
+
+# React build
+build/
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# ML model files (large)
+*.h5
+*.pkl
+*.model
+*.weights
+
+# Uploads folder (temporary files)
+uploads/
+temp/
+
+# Python distribution
+build/
+dist/
+*.egg-info/
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# ============================================
+# MACHINE LEARNING MODELS (HUGE FILES)
+# ============================================
+# DeepFace downloaded models (100-500MB)
+.deepface/
+**/.deepface/
+ml/.deepface/
+
+# Model files (can be 50-500MB each)
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.model
+*.weights
+*.ckpt
+*.pth
+*.pt
+*.onnx
+*.pb
+*.tflite
+
+# Training data and outputs
+data/
+datasets/
+models/
+checkpoints/
+logs/
+tensorboard/
+wandb/
+mlruns/
+
+# ============================================
+# UPLOAD & TEMP FILES
+# ============================================
+# Multer upload directory (user uploaded images)
+backend/uploads/
+uploads/
+temp/
+tmp/
+cache/
+
+# Temporary files from your FastAPI service
+ml/temp/
+ml/cache/
+*.tmp
+
+# ============================================
+# MEDIA FILES (USER UPLOADS)
+# ============================================
+# Images (exclude user uploads but allow sample images)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.webp
+
+# Videos
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.webm
+
+# Allow sample/demo images (uncomment if needed)
+# !sample*.jpg
+# !demo*.png
+# !assets/*.png
+
+# ============================================
+# ENVIRONMENT & SECRETS
+# ============================================
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# API keys and configuration
+config.json
+secrets.json
+credentials.json
+
+# ============================================
+# DEVELOPMENT & OS
+# ============================================
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ============================================
+# DOCKER & DEPLOYMENT
+# ============================================
+# Docker
+docker-compose.override.yml
+Dockerfile.local
+
+# ============================================
+# PROJECT SPECIFIC
+# ============================================
+# Your FastAPI service temp files
+ml/fastapi_service.log
+ml/*.log
+
+# React build artifacts
+ui/build/
+ui/.eslintcache
+
+# Backend runtime files
+backend/runtime.log
+backend/error.log
+
+# ============================================
+# LOG FILES & RUNTIME DATA (GROWING FILES)
+# ============================================
+# Emotion detection logs (these grow continuously)
+ml/emotion_log.txt
+emotion_log.txt
+**/*_log.txt
+**/*.log
+
+# Runtime/temporary files
+*.tmp
+*.temp
+temp_*
+runtime_*
+
+# ============================================
+# LARGE BINARY FILES
+# ============================================
+# Any remaining large files
+*.bin
+*.dat
+*.cache

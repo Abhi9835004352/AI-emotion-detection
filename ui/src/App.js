@@ -59,7 +59,7 @@ function App() {
             formData.append('image', blob, 'camera-capture.jpg');
 
             try {
-                const response = await fetch('http://localhost:4000/analyze', {
+                const response = await fetch('http://localhost:4000/api/emotion', {
                     method: 'POST',
                     body: formData
                 });
@@ -98,7 +98,7 @@ function App() {
             const formData = new FormData();
             formData.append('image', file);
 
-            const response = await fetch('http://localhost:4000/analyze', {
+            const response = await fetch('http://localhost:4000/api/emotion', {
                 method: 'POST',
                 body: formData
             });

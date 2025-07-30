@@ -13,18 +13,27 @@ app.use(cors());
 const upload = multer({ dest: 'uploads/' });
 
 app.post('/api/emotion', upload.single('image'), async (req, res) => {
-    if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
+    console.log('Received request for emotion analysis');
+    if (!req.file) {
+        console.log('No file in request');
+        return res.status(400).json({ error: 'No file uploaded' });
+    }
 
+    console.log('File received:', req.file.originalname, req.file.size, 'bytes');
     const formData = new FormData();
     formData.append('image', fs.createReadStream(req.file.path));
 
     try {
-        const response = await axios.post('http://localhost:5001/analyze', formData, {
+        const mlApiUrl = process.env.ML_API_URL || 'http://ml:5001';
+        console.log('Calling ML service at:', `${mlApiUrl}/analyze`);
+        const response = await axios.post(`${mlApiUrl}/analyze`, formData, {
             headers: formData.getHeaders(),
             timeout: 30000 // (optional) handle long ML inference gracefully
         });
+        console.log('ML service response received');
         res.json(response.data);
     } catch (error) {
+        console.error('Error:', error.message);
         res.status(500).json({ error: true, message: error.message });
     } finally {
         fs.unlink(req.file.path, () => { }); // cleanup uploaded file

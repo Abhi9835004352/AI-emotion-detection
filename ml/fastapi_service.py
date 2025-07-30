@@ -10,6 +10,12 @@ import numpy as np
 app = FastAPI()
 
 
+@app.get("/health")
+async def health_check():
+    """Health check endpoint for Docker"""
+    return {"status": "healthy", "service": "ml-emotion-detection"}
+
+
 def convert_numpy_types(obj):
     """Convert numpy types to Python native types for JSON serialization"""
     if isinstance(obj, dict):
